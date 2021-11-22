@@ -63,8 +63,8 @@
     ]
   },
   {
-    "shortName": "LocalDateTime",
-    "longName": "java.time.LocalDateTime",
+    "shortName": "Date",
+    "longName": "java.util.Date",
     "dbTypes": [
       "^datetime",
       "^timestamp"

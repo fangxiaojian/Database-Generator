@@ -11,14 +11,14 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <projectService serviceImplementation="com.github.houkunlin.config.ConfigService"/>
+        <projectService serviceImplementation="com.minstone.generator.config.ConfigService"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
         <action
-                id="com.github.houkunlin.action.MainAction"
-                class="com.github.houkunlin.action.MainAction"
+                id="com.minstone.generator.action.MainAction"
+                class="com.minstone.generator.action.MainAction"
                 text="Generator Code"
                 description="Generator code">
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
