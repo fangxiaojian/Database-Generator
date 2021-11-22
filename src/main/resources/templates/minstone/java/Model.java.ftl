@@ -1,5 +1,5 @@
-${gen.setType("model")}
-package ${entity.packages.model};
+${gen.setType("entity")}
+package ${entity.packages.entity};
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;

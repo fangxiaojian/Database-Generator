@@ -46,7 +46,7 @@ public class BaseSetting implements IWindows {
      */
     private final Developer developer;
     /**
-     * 输入框：Entity前缀
+     * 输入框：Entity后缀
      */
     private JTextField entitySuffixField;
     /**
@@ -58,7 +58,7 @@ public class BaseSetting implements IWindows {
      */
     private JButton selectEntityPackageButton;
     /**
-     * 输入框：Dao前缀
+     * 输入框：Dao后缀
      */
     private JTextField daoSuffixField;
     /**
@@ -72,9 +72,9 @@ public class BaseSetting implements IWindows {
     /**
      * 输入框：XML包名
      */
-    private JTextField xmlPackageField;
+//    private JTextField xmlPackageField;
     /**
-     * 输入框：Service前缀
+     * 输入框：Service后缀
      */
     private JTextField serviceSuffixField;
     /**
@@ -86,7 +86,19 @@ public class BaseSetting implements IWindows {
      */
     private JButton selectServicePackageButton;
     /**
-     * 输入框：Controller前缀
+     * 输入框：ServiceImpl后缀
+     */
+    private JTextField serviceImplSuffixField;
+    /**
+     * 输入框：ServiceImpl包名
+     */
+    private EditorTextField serviceImplPackageField;
+    /**
+     * 按钮：ServiceImpl 包选择
+     */
+    private JButton selectServiceImplPackageButton;
+    /**
+     * 输入框：Controller后缀
      */
     private JTextField controllerSuffixField;
     /**
@@ -142,8 +154,9 @@ public class BaseSetting implements IWindows {
                 map.put(settings::setEntitySuffix, entitySuffixField);
                 map.put(settings::setDaoSuffix, daoSuffixField);
                 map.put(settings::setServiceSuffix, serviceSuffixField);
+                map.put(settings::setServiceImplSuffix, serviceImplSuffixField);
                 map.put(settings::setControllerSuffix, controllerSuffixField);
-                map.put(settings::setXmlPackage, xmlPackageField);
+//                map.put(settings::setXmlPackage, xmlPackageField);
             }
 
             @Override
@@ -182,8 +195,9 @@ public class BaseSetting implements IWindows {
         entitySuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         daoSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         serviceSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
+        serviceImplSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         controllerSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
-        xmlPackageField.getDocument().addDocumentListener(textFieldDocumentListener);
+//        xmlPackageField.getDocument().addDocumentListener(textFieldDocumentListener);
 
         /* 包名输入框的输入事件监听 */
         class EditorTextFieldDocumentListener implements com.intellij.openapi.editor.event.DocumentListener {
@@ -196,6 +210,7 @@ public class BaseSetting implements IWindows {
                 map.put(settings::setEntityPackage, entityPackageField);
                 map.put(settings::setDaoPackage, daoPackageField);
                 map.put(settings::setServicePackage, servicePackageField);
+                map.put(settings::setServicePackage, serviceImplPackageField);
                 map.put(settings::setControllerPackage, controllerPackageField);
             }
 
@@ -220,6 +235,7 @@ public class BaseSetting implements IWindows {
         entityPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         daoPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         servicePackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
+        serviceImplPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         controllerPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
 
         ItemListener checkBoxItemListener = new ItemListener() {
@@ -249,6 +265,7 @@ public class BaseSetting implements IWindows {
         entityPackageField = createEditorTextField(project);
         daoPackageField = createEditorTextField(project);
         servicePackageField = createEditorTextField(project);
+        serviceImplPackageField = createEditorTextField(project);
         controllerPackageField = createEditorTextField(project);
     }
 
@@ -278,6 +295,9 @@ public class BaseSetting implements IWindows {
         });
         selectServicePackageButton.addActionListener(e -> {
             chooserPackage(servicePackageField.getText(), servicePackageField::setText);
+        });
+        selectServiceImplPackageButton.addActionListener(e -> {
+            chooserPackage(serviceImplPackageField.getText(), serviceImplPackageField::setText);
         });
         selectControllerPackageButton.addActionListener(e -> {
             chooserPackage(controllerPackageField.getText(), controllerPackageField::setText);
@@ -311,13 +331,15 @@ public class BaseSetting implements IWindows {
         entitySuffixField.setText(settings.getEntitySuffix());
         daoSuffixField.setText(settings.getDaoSuffix());
         serviceSuffixField.setText(settings.getServiceSuffix());
+        serviceImplSuffixField.setText(settings.getServiceImplSuffix());
         controllerSuffixField.setText(settings.getControllerSuffix());
 
         entityPackageField.setText(settings.getEntityPackage());
         daoPackageField.setText(settings.getDaoPackage());
         servicePackageField.setText(settings.getServicePackage());
+        serviceImplPackageField.setText(settings.getServiceImplPackage());
         controllerPackageField.setText(settings.getControllerPackage());
-        xmlPackageField.setText(settings.getXmlPackage());
+//        xmlPackageField.setText(settings.getXmlPackage());
 
         overrideJavaCheckBox.setSelected(options.isOverrideJava());
         overrideXmlCheckBox.setSelected(options.isOverrideXml());

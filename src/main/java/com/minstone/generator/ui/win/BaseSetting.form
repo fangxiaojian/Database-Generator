@@ -29,7 +29,7 @@
             <constraints/>
             <properties>
               <preferredSize width="100" height="29"/>
-              <text value="Entity"/>
+              <text value="Model"/>
             </properties>
           </component>
           <component id="8d09a" class="javax.swing.JLabel">
@@ -41,8 +41,8 @@
           <component id="c90b8" class="com.intellij.ui.EditorTextField" binding="entityPackageField" custom-create="true">
             <constraints/>
             <properties>
-              <preferredSize width="240" height="29"/>
-              <text value="com.example.entity"/>
+              <preferredSize width="400" height="29"/>
+              <text value="com.minstone.app.ale.datacenter.model"/>
             </properties>
           </component>
           <component id="6d4b6" class="javax.swing.JButton" binding="selectEntityPackageButton">
@@ -70,7 +70,7 @@
             <constraints/>
             <properties>
               <preferredSize width="100" height="29"/>
-              <text value="Repository"/>
+              <text value="mapper"/>
             </properties>
           </component>
           <component id="585ba" class="javax.swing.JLabel">
@@ -82,27 +82,14 @@
           <component id="ff1a0" class="com.intellij.ui.EditorTextField" binding="daoPackageField" custom-create="true">
             <constraints/>
             <properties>
-              <preferredSize width="240" height="29"/>
-              <text value="com.example.repository"/>
+              <preferredSize width="400" height="29"/>
+              <text value="com.minstone.app.ale.datacenter.mapper"/>
             </properties>
           </component>
           <component id="c435d" class="javax.swing.JButton" binding="selectDaoPackageButton">
             <constraints/>
             <properties>
               <text resource-bundle="i18n/language" key="panel.dao.package.select"/>
-            </properties>
-          </component>
-          <component id="159b8" class="javax.swing.JLabel">
-            <constraints/>
-            <properties>
-              <text resource-bundle="i18n/language" key="panel.dao.xml-package"/>
-            </properties>
-          </component>
-          <component id="95e0" class="javax.swing.JTextField" binding="xmlPackageField">
-            <constraints/>
-            <properties>
-              <preferredSize width="180" height="29"/>
-              <text value="mapper"/>
             </properties>
           </component>
         </children>
@@ -136,14 +123,55 @@
           <component id="5b7f3" class="com.intellij.ui.EditorTextField" binding="servicePackageField" custom-create="true">
             <constraints/>
             <properties>
-              <preferredSize width="240" height="29"/>
-              <text value="com.example.service"/>
+              <preferredSize width="400" height="29"/>
+              <text value="com.minstone.app.ale.datacenter.coreapi.service.core"/>
             </properties>
           </component>
           <component id="817e7" class="javax.swing.JButton" binding="selectServicePackageButton">
             <constraints/>
             <properties>
               <text resource-bundle="i18n/language" key="panel.service.package.select"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1cf75" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+        <constraints/>
+        <properties>
+          <preferredSize width="940" height="68"/>
+        </properties>
+        <border type="etched" title-resource-bundle="i18n/language" title-key="panel.serviceImpl.title"/>
+        <children>
+          <component id="1d70a" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text resource-bundle="i18n/language" key="panel.serviceImpl.suffix"/>
+            </properties>
+          </component>
+          <component id="66548" class="javax.swing.JTextField" binding="serviceImplSuffixField">
+            <constraints/>
+            <properties>
+              <preferredSize width="100" height="29"/>
+              <text value="ServiceImpl"/>
+            </properties>
+          </component>
+          <component id="4caa0" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text resource-bundle="i18n/language" key="panel.serviceImpl.package"/>
+            </properties>
+          </component>
+          <component id="5b7f3" class="com.intellij.ui.EditorTextField" binding="serviceImplPackageField" custom-create="true">
+            <constraints/>
+            <properties>
+              <preferredSize width="400" height="29"/>
+              <text value="com.minstone.app.ale.datacenter.coreservice.service.core.impl"/>
+            </properties>
+          </component>
+          <component id="817e7" class="javax.swing.JButton" binding="selectServiceImplPackageButton">
+            <constraints/>
+            <properties>
+              <text resource-bundle="i18n/language" key="panel.serviceImpl.package.select"/>
             </properties>
           </component>
         </children>
@@ -165,7 +193,7 @@
             <constraints/>
             <properties>
               <preferredSize width="100" height="29"/>
-              <text value="Controller"/>
+              <text value="Restful"/>
             </properties>
           </component>
           <component id="6d441" class="javax.swing.JLabel">
@@ -177,8 +205,8 @@
           <component id="3c2b2" class="com.intellij.ui.EditorTextField" binding="controllerPackageField" custom-create="true">
             <constraints/>
             <properties>
-              <preferredSize width="240" height="29"/>
-              <text value="com.example.controller"/>
+              <preferredSize width="400" height="29"/>
+              <text value="com.minstone.app.ale.datacenter.restful"/>
             </properties>
           </component>
           <component id="d0d80" class="javax.swing.JButton" binding="selectControllerPackageButton">

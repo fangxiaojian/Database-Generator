@@ -1,7 +1,7 @@
-${gen.setType("restful")}
-package ${entity.packages.restful};
+${gen.setType("controller")}
+package ${entity.packages.controller};
 
-import ${entity.packages.model.full};
+import ${entity.packages.entity.full};
 import ${entity.packages.service.full};
 
 import com.github.pagehelper.util.StringUtil;
@@ -22,7 +22,7 @@ import java.util.List;
 @Api(tags = "${table.comment}")
 @RestController
 @RequestMapping("/doc/${table.name}")
-public class ${entity.name.restful}{
+public class ${entity.name.controller}{
 
     @Autowired
     private final ${entity.name.service} ${entity.name.service.firstLower};

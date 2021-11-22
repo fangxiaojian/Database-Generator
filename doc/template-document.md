@@ -18,7 +18,7 @@
 
 ## 模板内变量说明
 ### `settings` 基础设置信息变量
-Type: `Object` Class: `com.github.houkunlin.config.Settings`
+Type: `Object` Class: `Settings`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -39,7 +39,7 @@ Type: `Object` Class: `com.github.houkunlin.config.Settings`
 
 ### `developer` 开发者信息变量
 
-Type: `Object` Class: `com.github.houkunlin.config.Developer`
+Type: `Object` Class: `Developer`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -50,7 +50,7 @@ Type: `Object` Class: `com.github.houkunlin.config.Developer`
 
 ### `gen` 当前文件类型配置对象
 
-Type: `Object` Class: `com.github.houkunlin.vo.Variable`
+Type: `Object` Class: `Variable`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -97,7 +97,7 @@ Type: `Object` Class: `com.github.houkunlin.vo.Variable`
 
 ### `table` 数据库表信息变量
 
-Type: `Object` Class: `com.github.houkunlin.vo.impl.TableImpl` 实现了 `com.github.houkunlin.vo.ITable` 接口
+Type: `Object` Class: `TableImpl` 实现了 `ITable` 接口
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -109,7 +109,7 @@ Type: `Object` Class: `com.github.houkunlin.vo.impl.TableImpl` 实现了 `com.gi
 
 ### `columns` 数据库表字段列表变量
 
-Type: `List` Class: `com.github.houkunlin.vo.impl.TableColumnImpl` 实现了 `com.github.houkunlin.vo.ITableColumn` 接口
+Type: `List` Class: `TableColumnImpl` 实现了 `ITableColumn` 接口
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -126,7 +126,7 @@ Type: `List` Class: `com.github.houkunlin.vo.impl.TableColumnImpl` 实现了 `co
 
 ### `entity` 实体类信息变量
 
-Type: `Object` Class: `com.github.houkunlin.vo.impl.EntityImpl` 实现了 `com.github.houkunlin.vo.IEntity` 接口
+Type: `Object` Class: `EntityImpl` 实现了 `IEntity` 接口
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -139,7 +139,7 @@ Type: `Object` Class: `com.github.houkunlin.vo.impl.EntityImpl` 实现了 `com.g
 
 ### `fields` 实体对象字段列表信息变量
 
-Type: `List` Class: `com.github.houkunlin.vo.impl.EntityFieldImpl` 实现了 `com.github.houkunlin.vo.IEntityField` 接口
+Type: `List` Class: `EntityFieldImpl` 实现了 `IEntityField` 接口
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -155,7 +155,7 @@ Type: `List` Class: `com.github.houkunlin.vo.impl.EntityFieldImpl` 实现了 `co
 
 ### `primary` 主键Java字段、数据库列对象信息变量
 
-Type: `Object` Class: `com.github.houkunlin.vo.impl.PrimaryInfo` 
+Type: `Object` Class: `PrimaryInfo` 
 
 | 字段/方法 | 类型                     | 说明                                                         |
 | --------- | ------------------------ | ------------------------------------------------------------ |
@@ -169,7 +169,7 @@ Type: `Object` Class: `com.github.houkunlin.vo.impl.PrimaryInfo`
 ## 模板其他相关对象说明
 
 ### `IName` 名称接口
-Class: `com.github.houkunlin.vo.IName`
+Class: `IName`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -181,7 +181,7 @@ Class: `com.github.houkunlin.vo.IName`
 
 ### `EntityName` 实体类名称对象（不含后缀）
 
-Class: `com.github.houkunlin.vo.impl.EntityName` 实现了 `com.github.houkunlin.vo.IName` 接口
+Class: `EntityName` 实现了 `IName` 接口
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -199,7 +199,7 @@ Class: `com.github.houkunlin.vo.impl.EntityName` 实现了 `com.github.houkunlin
 
 ### `EntityNameInfo` 实体类名称信息对象（含后缀）
 
-Class: `com.github.houkunlin.vo.impl.EntityNameInfo` 实现了 `com.github.houkunlin.vo.IName` 接口
+Class: `EntityNameInfo` 实现了 `IName` 接口
 
 | 字段/方法    | 类型   | 说明                                       |
 | ------------ | ------ | ------------------------------------------ |
@@ -212,7 +212,7 @@ Class: `com.github.houkunlin.vo.impl.EntityNameInfo` 实现了 `com.github.houku
 
 ### `EntityPackage` 实体类包对象
 
-Class: `com.github.houkunlin.vo.impl.EntityPackage`
+Class: `EntityPackage`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -228,7 +228,7 @@ Class: `com.github.houkunlin.vo.impl.EntityPackage`
 
 ### `EntityPackageInfo` 实体类包信息对象
 
-Class: `com.github.houkunlin.vo.impl.EntityPackageInfo`
+Class: `EntityPackageInfo`
 
 |字段/方法|类型|说明|
 | ----|----|----|
@@ -240,7 +240,7 @@ Class: `com.github.houkunlin.vo.impl.EntityPackageInfo`
 
 ### `FieldNameInfo` 字段名称信息对象
 
-Class: `com.github.houkunlin.vo.impl.FieldNameInfo` 实现了 `com.github.houkunlin.vo.IName` 接口
+Class: `FieldNameInfo` 实现了 `IName` 接口
 
 | 字段/方法    | 类型   | 说明                           |
 | ------------ | ------ | ------------------------------ |

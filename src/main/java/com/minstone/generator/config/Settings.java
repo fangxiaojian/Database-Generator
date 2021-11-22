@@ -25,27 +25,27 @@ public class Settings {
     /**
      * Entity 后缀
      */
-    private String entitySuffix = "Entity";
+    private String entitySuffix = "Model";
     /**
      * Dao 后缀
      */
-    private String daoSuffix = "Repository";
+    private String daoSuffix = "Mapper";
     /**
      * Controller 后缀
      */
-    private String controllerSuffix = "Controller";
+    private String controllerSuffix = "Restful";
     /**
      * Entity 包名
      */
-    private String entityPackage = "com.example.entity";
+    private String entityPackage = "com.minstone.app.ale.datacenter.model";
     /**
      * Dao 包名
      */
-    private String daoPackage = "com.example.repository";
+    private String daoPackage = "com.minstone.app.ale.datacenter.mapper";
     /**
      * Controller 包名
      */
-    private String controllerPackage = "com.example.controller";
+    private String controllerPackage = "com.minstone.app.ale.datacenter.restful";
     /**
      * Mapper XML 包名
      */
