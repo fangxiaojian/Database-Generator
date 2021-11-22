@@ -29,32 +29,32 @@ public class ${entity.name.controller}{
 
     @PostMapping(value = "add")
     @ApiOperation(value = "新增${table.comment}")
-    public ResponseResultBean<${entity.name.model}> add(
+    public ResponseResultBean<${entity.name.entity}> add(
         @ApiParam(name = "${table.name}", value = "${table.comment}")
-        @RequestBody ${entity.name.model} ${entity.name.model.firstLower}) {
-        return ResponseResultBean.success(${entity.name.service.firstLower}.add(${entity.name.model.firstLower}));
+        @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
+        return ResponseResultBean.success(${entity.name.service.firstLower}.add(${entity.name.entity.firstLower}));
     }
 
     @PostMapping(value = "update")
     @ApiOperation(value = "更新${table.comment}")
-    public ResponseResultBean<${entity.name.model}> update(
+    public ResponseResultBean<${entity.name.entity}> update(
         @ApiParam(name = "${table.name}", value = "${table.comment}")
-        @RequestBody ${entity.name.model} ${entity.name.model.firstLower}) {
-        if(StringUtil.isEmpty(${entity.name.model.firstLower}.getCode())){
+        @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
+        if(StringUtil.isEmpty(${entity.name.entity.firstLower}.getCode())){
             return ResponseResultBean.serverError("code不能为空");
         }
-        return ResponseResultBean.success(${entity.name.service.firstLower}.update(${entity.name.model.firstLower}));
+        return ResponseResultBean.success(${entity.name.service.firstLower}.update(${entity.name.entity.firstLower}));
     }
 
     @GetMapping(value = "detail")
     @ApiOperation(value = "获取${table.comment}")
-    public ResponseResultBean<${entity.name.model}> detail(
+    public ResponseResultBean<${entity.name.entity}> detail(
         @ApiParam(name = "code", value = "唯一标识 code",required = true)
         @RequestParam("code") String code) {
         if(StringUtil.isEmpty(code)){
             return ResponseResultBean.serverError("code不能为空");
         }
-        return ResponseResultBean.success(${entity.name.service.firstLower}.detail(${entity.name.model.firstLower}));
+        return ResponseResultBean.success(${entity.name.service.firstLower}.detail(${entity.name.entity.firstLower}));
     }
 
 }

@@ -22,13 +22,10 @@ public class SaveFilePath {
 
     static {
         types.add("entity");
-        types.add("model");
         types.add("dao");
-        types.add("mapper");
         types.add("service");
         types.add("serviceImpl");
         types.add("controller");
-        types.add("restful");
         types.add("xml");
     }
 
@@ -68,33 +65,21 @@ public class SaveFilePath {
                 saveFilePath = new SaveFilePath(entityName + settings.getEntitySuffix() + ".java",
                         settings.getJavaPathAt(settings.getEntityPackage()));
                 break;
-            case "model":
-                saveFilePath = new SaveFilePath(entityName + settings.getModelSuffix() + ".java",
-                        settings.getJavaPathAt(settings.getMapperPackage()));
-                break;
             case "dao":
                 saveFilePath = new SaveFilePath(entityName + settings.getDaoSuffix() + ".java",
                         settings.getJavaPathAt(settings.getDaoPackage()));
-                break;
-            case "mapper":
-                saveFilePath = new SaveFilePath(entityName + settings.getMapperSuffix() + ".java",
-                        settings.getJavaPathAt(settings.getMapperPackage()));
                 break;
             case "service":
                 saveFilePath = new SaveFilePath(entityName + settings.getServiceSuffix() + ".java",
                         settings.getJavaPathAt(settings.getServicePackage()));
                 break;
             case "serviceImpl":
-                saveFilePath = new SaveFilePath(entityName + settings.getServiceImplSuffix() + ".java",
-                        settings.getJavaPathAt(settings.getServiceImplPackage() + ".impl"));
+                saveFilePath = new SaveFilePath(entityName + settings.getServiceSuffix() + "Impl.java",
+                        settings.getJavaPathAt(settings.getServicePackage() + ".impl"));
                 break;
             case "controller":
                 saveFilePath = new SaveFilePath(entityName + settings.getControllerSuffix() + ".java",
                         settings.getJavaPathAt(settings.getControllerPackage()));
-                break;
-            case "restful":
-                saveFilePath = new SaveFilePath(entityName + settings.getRestfulSuffix() + ".java",
-                        settings.getJavaPathAt(settings.getRestfulPackage()));
                 break;
             case "xml":
                 saveFilePath = new SaveFilePath(entityName + settings.getDaoSuffix() + ".xml",
@@ -132,15 +117,8 @@ public class SaveFilePath {
         return "entity".equals(type);
     }
 
-    public boolean isModel() {
-        return "model".equals(type);
-    }
-
     public boolean isDao() {
         return "dao".equals(type);
-    }
-    public boolean isMapper() {
-        return "mapper".equals(type);
     }
 
     public boolean isService() {
@@ -153,10 +131,6 @@ public class SaveFilePath {
 
     public boolean isController() {
         return "controller".equals(type);
-    }
-
-    public boolean isRestful() {
-        return "restful".equals(type);
     }
 
     public boolean isJava() {

@@ -22,10 +22,6 @@ public class EntityName implements IName {
      */
     private IName entity;
     /**
-     * 实体类完整名称
-     */
-    private IName model;
-    /**
      * Service 完整名称
      */
     private IName service;
@@ -38,17 +34,9 @@ public class EntityName implements IName {
      */
     private IName dao;
     /**
-     * Mapper 完整名称
-     */
-    private IName mapper;
-    /**
      * Controller 完整名称
      */
     private IName controller;
-    /**
-     * Restful 完整名称
-     */
-    private IName restful;
 
     public EntityName(DbTable dbTable) {
         this.value = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, dbTable.getName());
@@ -69,13 +57,10 @@ public class EntityName implements IName {
 
     public void initMore(Settings settings) {
         this.entity = build(settings.getEntitySuffix());
-        this.model = build(settings.getModelSuffix());
         this.service = build(settings.getServiceSuffix());
         this.serviceImpl = build(settings.getServiceImplSuffix());
         this.dao = build(settings.getDaoSuffix());
-        this.mapper = build(settings.getMapperSuffix());
         this.controller = build(settings.getControllerSuffix());
-        this.restful = build(settings.getRestfulSuffix());
     }
 
     private IName build(String suffix) {

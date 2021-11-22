@@ -25,10 +25,6 @@ public class EntityPackage {
      */
     private EntityPackageInfo entity;
     /**
-     * 实体类包名信息
-     */
-    private EntityPackageInfo model;
-    /**
      * Service 包名信息
      */
     private EntityPackageInfo service;
@@ -41,17 +37,9 @@ public class EntityPackage {
      */
     private EntityPackageInfo dao;
     /**
-     * mapper 包名信息
-     */
-    private EntityPackageInfo mapper;
-    /**
      * Controller 包名信息
      */
     private EntityPackageInfo controller;
-    /**
-     * restful 包名信息
-     */
-    private EntityPackageInfo restful;
 
     public void add(String fullPackageName) {
         if (fullPackageName.startsWith("java.lang.")) {
@@ -75,12 +63,9 @@ public class EntityPackage {
 
     public void initMore(Settings settings, EntityName entityName) {
         this.entity = new EntityPackageInfo(settings.getEntityPackage(), entityName.getEntity());
-        this.model = new EntityPackageInfo(settings.getModelPackage(), entityName.getEntity());
         this.service = new EntityPackageInfo(settings.getServicePackage(), entityName.getService());
         this.serviceImpl = new EntityPackageInfo(settings.getServiceImplPackage(), entityName.getServiceImpl());
         this.dao = new EntityPackageInfo(settings.getDaoPackage(), entityName.getDao());
-        this.mapper = new EntityPackageInfo(settings.getMapperPackage(), entityName.getDao());
         this.controller = new EntityPackageInfo(settings.getControllerPackage(), entityName.getController());
-        this.restful = new EntityPackageInfo(settings.getRestfulPackage(), entityName.getController());
     }
 }

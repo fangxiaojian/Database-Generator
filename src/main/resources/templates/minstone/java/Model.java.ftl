@@ -30,20 +30,21 @@ import java.io.Serializable;
 @SuperBuilder
 @JsonIgnoreProperties(ignoreUnknown = true)
 @TableName("${table.name}")
-public class ${entity.name.model} extends AleCommonFieldBean implements Serializable {
+public class ${entity.name.entity} extends AleCommonFieldBean implements Serializable {
 <#list fields as field>
     <#if field.selected>
 
         /**
         * ${field.comment}
         */
+        <#if field.primaryKey>
+            @TableId(type = IdType.ASSIGN_ID)
+        </#if>
         <#if field.typeName == "Date">
             @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
             @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-            @ApiModelProperty(value = "${field.comment} yyyy-MM-dd HH:mm:ss")
-        <#else>
-            @ApiModelProperty(value = "${field.comment}")
         </#if>
+        @ApiModelProperty(value = "${field.comment}")
         private ${field.typeName} ${field.name};
     </#if>
 </#list>

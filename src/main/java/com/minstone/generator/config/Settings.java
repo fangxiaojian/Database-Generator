@@ -31,6 +31,14 @@ public class Settings {
      */
     private String daoSuffix = "Mapper";
     /**
+     * Service 后缀
+     */
+    private String serviceSuffix = "Service";
+    /**
+     * ServiceImpl 后缀
+     */
+    private String serviceImplSuffix = "ServiceImpl";
+    /**
      * Controller 后缀
      */
     private String controllerSuffix = "Restful";
@@ -43,6 +51,14 @@ public class Settings {
      */
     private String daoPackage = "com.minstone.app.ale.datacenter.mapper";
     /**
+     * Service 包名
+     */
+    private String servicePackage = "com.minstone.app.ale.datacenter.coreapi.service.core";
+    /**
+     * ServiceImpl 包名
+     */
+    private String serviceImplPackage = "com.minstone.app.ale.datacenter.coreservice.service.core.impl";
+    /**
      * Controller 包名
      */
     private String controllerPackage = "com.minstone.app.ale.datacenter.restful";
@@ -50,47 +66,6 @@ public class Settings {
      * Mapper XML 包名
      */
     private String xmlPackage = "mapper";
-
-    /**
-     * model 后缀
-     */
-    private String modelSuffix = "Model";
-    /**
-     * model 包名
-     */
-    private String modelPackage = "com.minstone.app.ale.datacenter.model";
-    /**
-     * restful 后缀
-     */
-    private String restfulSuffix = "Restful";
-    /**
-     * restful 包名
-     */
-    private String restfulPackage = "com.minstone.app.ale.datacenter.restful";
-    /**
-     * Service 后缀
-     */
-    private String serviceSuffix = "Service";
-    /**
-     * Service 包名
-     */
-    private String servicePackage = "com.minstone.app.ale.datacenter.coreapi.service.core";
-    /**
-     * ServiceImpl 后缀
-     */
-    private String serviceImplSuffix = "ServiceImpl";
-    /**
-     * ServiceImpl 包名
-     */
-    private String serviceImplPackage = "com.minstone.app.ale.datacenter.coreservice.service.core.impl";
-    /**
-     * Mapper 后缀
-     */
-    private String mapperSuffix = "Mapper";
-    /**
-     * Mapper 包名
-     */
-    private String mapperPackage = "com.minstone.app.ale.datacenter.mapper";
 
     public String getSourcesPathAt(String filename) {
         return sourcesPath + "/" + filename;

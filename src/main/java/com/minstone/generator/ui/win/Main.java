@@ -42,17 +42,13 @@ public class Main extends JFrame {
      */
     private final Options options;
     /**
-     * 面板对象：基础配置
-     */
-    private final Minstone minstone;
-    /**
      * 面板对象：数据库表配置
      */
     private final TableSetting tableSetting;
     /**
      * 面板对象：基础信息配置
      */
-    // private final BaseSetting baseSetting;
+    private final BaseSetting baseSetting;
     /**
      * 面板对象：模板选择配置
      */
@@ -122,12 +118,10 @@ public class Main extends JFrame {
         this.settings = configService.getSettings();
         this.developer = configService.getDeveloper();
         this.options = configService.getOptions();
-        minstone = new Minstone(settings, developer, options);
-        // baseSetting = new BaseSetting(settings, developer, options);
+        baseSetting = new BaseSetting(settings, developer, options);
         selectTemplate = new SelectTemplate();
         tableSetting = new TableSetting(psiElements);
-        tableTabbedPane.addTab("基础配置", minstone.getContent());
-        // tableTabbedPane.addTab("基础配置", baseSetting.getContent());
+        tableTabbedPane.addTab("基础配置", baseSetting.getContent());
         tableTabbedPane.addTab("模板选择", selectTemplate.getContent());
         tableTabbedPane.addTab("数据库表配置", tableSetting.getContent());
         initWindows();
