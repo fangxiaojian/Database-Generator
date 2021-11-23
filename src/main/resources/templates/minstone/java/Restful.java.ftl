@@ -22,11 +22,11 @@ import java.util.List;
  */
 @Api(tags = "${table.comment}")
 @RestController
-@RequestMapping("/doc/${table.name}")
+@RequestMapping("/doc/${entity.name}")
 public class ${entity.name.controller}{
 
     @Autowired
-    private final ${entity.name.service} ${entity.name.service.firstLower};
+    ${entity.name.service} ${entity.name.service.firstLower};
 
     @PostMapping(value = "add")
     @ApiOperation(value = "新增${table.comment}")
