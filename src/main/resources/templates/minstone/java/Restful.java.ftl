@@ -16,8 +16,9 @@ import java.util.List;
 /**
  * Restful：${entity.comment}
  *
- * @author ${developer.author}
- * @date ${date.toString("yyyy-MM-dd HH:mm:ss")}
+ * @Author ${developer.author}
+ * @Email ${developer.email}
+ * @Date ${date.toString("yyyy-MM-dd HH:mm:ss")}
  */
 @Api(tags = "${table.comment}")
 @RestController

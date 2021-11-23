@@ -18,11 +18,12 @@ ${entity.packages}
 import java.io.Serializable;
 
 /**
-* 实体类：${entity.comment}<#if table.comment?trim?length gt 0 && entity.comment != table.comment> (${table.comment})</#if>
-*
-* @author ${developer.author}
-* @date ${date.toString("yyyy-MM-dd HH:mm:ss")}
-*/
+ * Model：${entity.comment}<#if table.comment?trim?length gt 0 && entity.comment != table.comment> (${table.comment})</#if>
+ *
+ * @Author ${developer.author}
+ * @Email ${developer.email}
+ * @Date ${date.toString("yyyy-MM-dd HH:mm:ss")}
+ */
 @ApiModel(value = "${table.comment}")
 @Data
 @NoArgsConstructor
