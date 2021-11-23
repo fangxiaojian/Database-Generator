@@ -38,14 +38,13 @@ public class ${entity.name.entity} extends AleCommonFieldBean implements Seriali
         /**
         * ${field.comment}
         */
-        <#if field.primaryKey>
-            @TableId(type = IdType.ASSIGN_ID)
-        </#if>
         <#if field.typeName == "Date">
             @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
             @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+            @ApiModelProperty(value = "${field.comment} yyyy-MM-dd HH:mm:ss")
+        <#else>
+            @ApiModelProperty(value = "${field.comment}")
         </#if>
-        @ApiModelProperty(value = "${field.comment}")
         private ${field.typeName} ${field.name};
     </#if>
 </#list>
