@@ -74,8 +74,8 @@ public class SaveFilePath {
                         settings.getJavaPathAt(settings.getServicePackage()));
                 break;
             case "serviceImpl":
-                saveFilePath = new SaveFilePath(entityName + settings.getServiceSuffix() + "Impl.java",
-                        settings.getJavaPathAt(settings.getServicePackage() + ".impl"));
+                saveFilePath = new SaveFilePath(entityName + settings.getServiceImplSuffix() + ".java",
+                        settings.getJavaPathAt(settings.getServiceImplPackage()));
                 break;
             case "controller":
                 saveFilePath = new SaveFilePath(entityName + settings.getControllerSuffix() + ".java",
