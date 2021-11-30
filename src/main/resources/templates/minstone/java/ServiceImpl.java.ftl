@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Service：${entity.comment}
+ * Service: ${entity.comment}
  *
  * @Author ${developer.author}
  * @Email ${developer.email}

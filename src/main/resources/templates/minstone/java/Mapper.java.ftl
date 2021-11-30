@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import ${entity.packages.entity.full};
 
 /**
- * mapper：${entity.comment}
+ * mapper: ${entity.comment}
  *
  * @Author ${developer.author}
  * @Email ${developer.email}

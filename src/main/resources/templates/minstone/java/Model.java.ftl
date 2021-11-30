@@ -18,7 +18,7 @@ ${entity.packages}
 import java.io.Serializable;
 
 /**
- * Model：${entity.comment}<#if table.comment?trim?length gt 0 && entity.comment != table.comment> (${table.comment})</#if>
+ * Model: ${entity.comment}<#if table.comment?trim?length gt 0 && entity.comment != table.comment> (${table.comment})</#if>
  *
  * @Author ${developer.author}
  * @Email ${developer.email}
@@ -42,7 +42,7 @@ public class ${entity.name.entity} extends AleCommonFieldBean implements Seriali
             @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
             @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
             @ApiModelProperty(value = "${field.comment} yyyy-MM-dd HH:mm:ss")
-        <#else>
+        <#else >
             @ApiModelProperty(value = "${field.comment}")
         </#if>
         private ${field.typeName} ${field.name};

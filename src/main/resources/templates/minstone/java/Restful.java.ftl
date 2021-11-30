@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Restful：${entity.comment}
+ * Restful: ${entity.comment}
  *
  * @Author ${developer.author}
  * @Email ${developer.email}
@@ -29,7 +29,7 @@ public class ${entity.name.controller}{
     ${entity.name.service} ${entity.name.service.firstLower};
 
     @PostMapping(value = "add")
-    @ApiOperation(value = "新增${table.comment}")
+    @ApiOperation(value = "add ${table.comment}")
     public ResponseResultBean<${entity.name.entity}> add(
         @ApiParam(name = "${table.name}", value = "${table.comment}")
         @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
@@ -37,23 +37,23 @@ public class ${entity.name.controller}{
     }
 
     @PostMapping(value = "update")
-    @ApiOperation(value = "更新${table.comment}")
+    @ApiOperation(value = "update ${table.comment}")
     public ResponseResultBean<${entity.name.entity}> update(
         @ApiParam(name = "${table.name}", value = "${table.comment}")
         @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
         if(StringUtil.isEmpty(${entity.name.entity.firstLower}.getCode())){
-            return ResponseResultBean.serverError("code不能为空");
+            return ResponseResultBean.serverError("code is not null");
         }
         return ResponseResultBean.success(${entity.name.service.firstLower}.update(${entity.name.entity.firstLower}));
     }
 
     @GetMapping(value = "detail")
-    @ApiOperation(value = "获取${table.comment}")
+    @ApiOperation(value = "getDetail ${table.comment}")
     public ResponseResultBean<${entity.name.entity}> detail(
-        @ApiParam(name = "code", value = "唯一标识 code",required = true)
+        @ApiParam(name = "code", value = "code",required = true)
         @RequestParam("code") String code) {
         if(StringUtil.isEmpty(code)){
-            return ResponseResultBean.serverError("code不能为空");
+            return ResponseResultBean.serverError("code is not null");
         }
         return ResponseResultBean.success(${entity.name.service.firstLower}.detail(${entity.name.entity.firstLower}));
     }
