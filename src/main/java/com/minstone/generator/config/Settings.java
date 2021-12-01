@@ -53,11 +53,11 @@ public class Settings {
     /**
      * Service 包名
      */
-    private String servicePackage = "com.minstone.app.ale.datacenter.coreapi.service.core";
+    private String servicePackage = "com.minstone.app.ale.datacenter.service";
     /**
      * ServiceImpl 包名
      */
-    private String serviceImplPackage = "com.minstone.app.ale.datacenter.coreservice.service.core.impl";
+    private String serviceImplPackage = "com.minstone.app.ale.datacenter.service.impl";
     /**
      * Controller 包名
      */
