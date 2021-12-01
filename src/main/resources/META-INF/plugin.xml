@@ -1,5 +1,8 @@
 <idea-plugin require-restart="false">
+    <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
     <name>Database Generator</name>
+
+    <!-- 供应商主页和email-->
     <vendor email="fanghanj@minstone.com.cn.com" url="https://github.com/fangxiaojian/Database-Generator">fanghanj</vendor>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html

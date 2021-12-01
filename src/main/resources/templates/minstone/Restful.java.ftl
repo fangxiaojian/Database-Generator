@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Api(tags = "${table.comment}")
 @RestController
-@RequestMapping("/doc/${entity.name}")
+@RequestMapping("/doc/${entity.name.firstLower}")
 public class ${entity.name.controller}{
 
     @Autowired
@@ -31,7 +31,7 @@ public class ${entity.name.controller}{
     @PostMapping(value = "add")
     @ApiOperation(value = "add ${table.comment}")
     public ResponseResultBean<${entity.name.entity}> add(
-        @ApiParam(name = "${table.name}", value = "${table.comment}")
+        @ApiParam(name = "${entity.name.entity.firstLower}", value = "${table.comment}")
         @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
         return ResponseResultBean.success(${entity.name.service.firstLower}.add(${entity.name.entity.firstLower}));
     }
@@ -39,7 +39,7 @@ public class ${entity.name.controller}{
     @PostMapping(value = "update")
     @ApiOperation(value = "update ${table.comment}")
     public ResponseResultBean<${entity.name.entity}> update(
-        @ApiParam(name = "${table.name}", value = "${table.comment}")
+        @ApiParam(name = "${entity.name.entity.firstLower}", value = "${table.comment}")
         @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
         if(StringUtil.isEmpty(${entity.name.entity.firstLower}.getCode())){
             return ResponseResultBean.serverError("code is not null");
@@ -55,7 +55,7 @@ public class ${entity.name.controller}{
         if(StringUtil.isEmpty(code)){
             return ResponseResultBean.serverError("code is not null");
         }
-        return ResponseResultBean.success(${entity.name.service.firstLower}.detail(${entity.name.entity.firstLower}));
+        return ResponseResultBean.success(${entity.name.service.firstLower}.detail(code));
     }
 
 }

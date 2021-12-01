@@ -46,9 +46,9 @@ public class ${entity.name.serviceImpl} implements ${entity.name.service} {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public ${entity.name.entity} update(${entity.name.entity} statementPleaModel) {
+    public ${entity.name.entity} update(${entity.name.entity} ${entity.name.entity.firstLower}) {
         LambdaUpdateWrapper<${entity.name.entity}> extractWrapper = new LambdaUpdateWrapper<${entity.name.entity}>()
-                .eq(AleCommonFieldBean::getCode, ${entity.name.entity}.getCode());
+                .eq(AleCommonFieldBean::getCode, ${entity.name.entity.firstLower}.getCode());
         ${entity.name.dao.firstLower}.update(${entity.name.entity.firstLower}, extractWrapper);
         return ${entity.name.entity.firstLower};
     }
