@@ -189,7 +189,7 @@ public class BaseSetting implements IWindows {
             public EditorTextFieldDocumentListener() {
                 map.put(settings::setEntityPackage, entityPackageField);
                 map.put(settings::setServicePackage, servicePackageField);
-                map.put(settings::setServicePackage, serviceImplPackageField);
+                map.put(settings::setServiceImplPackage, serviceImplPackageField);
                 map.put(settings::setControllerPackage, controllerPackageField);
             }
 
