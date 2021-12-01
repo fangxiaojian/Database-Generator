@@ -83,7 +83,7 @@
             <constraints/>
             <properties>
               <preferredSize width="400" height="29"/>
-              <text value="com.minstone.app.ale.datacenter.coreapi.service.core"/>
+              <text value="com.minstone.app.ale.datacenter.service"/>
             </properties>
           </component>
           <component id="817e7" class="javax.swing.JButton" binding="selectServicePackageButton">
@@ -124,7 +124,7 @@
             <constraints/>
             <properties>
               <preferredSize width="400" height="29"/>
-              <text value="com.minstone.app.ale.datacenter.coreservice.service.core.impl"/>
+              <text value="com.minstone.app.ale.datacenter.service.impl"/>
             </properties>
           </component>
           <component id="817e7" class="javax.swing.JButton" binding="selectServiceImplPackageButton">
