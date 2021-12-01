@@ -11,5 +11,7 @@
   "servicePackage": "com.minstone.app.ale.datacenter.coreapi.service.core",
   "serviceImplPackage": "com.minstone.app.ale.datacenter.coreservice.service.core.impl",
   "controllerPackage": "com.minstone.app.ale.datacenter.restful",
-  "xmlPackage": "mapper"
+  "xmlPackage": "mapper",
+  "entityName": "",
+  "entityComment": ""
 }

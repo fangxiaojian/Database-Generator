@@ -58,22 +58,6 @@ public class BaseSetting implements IWindows {
      */
     private JButton selectEntityPackageButton;
     /**
-     * 输入框：Dao后缀
-     */
-    private JTextField daoSuffixField;
-    /**
-     * 输入框：Dao包名
-     */
-    private EditorTextField daoPackageField;
-    /**
-     * 按钮：Dao 包选择
-     */
-    private JButton selectDaoPackageButton;
-    /**
-     * 输入框：XML包名
-     */
-//    private JTextField xmlPackageField;
-    /**
      * 输入框：Service后缀
      */
     private JTextField serviceSuffixField;
@@ -152,11 +136,9 @@ public class BaseSetting implements IWindows {
                 map.put(developer::setAuthor, authorField);
                 map.put(developer::setEmail, emailField);
                 map.put(settings::setEntitySuffix, entitySuffixField);
-                map.put(settings::setDaoSuffix, daoSuffixField);
                 map.put(settings::setServiceSuffix, serviceSuffixField);
                 map.put(settings::setServiceImplSuffix, serviceImplSuffixField);
                 map.put(settings::setControllerSuffix, controllerSuffixField);
-//                map.put(settings::setXmlPackage, xmlPackageField);
             }
 
             @Override
@@ -193,11 +175,9 @@ public class BaseSetting implements IWindows {
         authorField.getDocument().addDocumentListener(textFieldDocumentListener);
         emailField.getDocument().addDocumentListener(textFieldDocumentListener);
         entitySuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
-        daoSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         serviceSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         serviceImplSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
         controllerSuffixField.getDocument().addDocumentListener(textFieldDocumentListener);
-//        xmlPackageField.getDocument().addDocumentListener(textFieldDocumentListener);
 
         /* 包名输入框的输入事件监听 */
         class EditorTextFieldDocumentListener implements com.intellij.openapi.editor.event.DocumentListener {
@@ -208,7 +188,6 @@ public class BaseSetting implements IWindows {
 
             public EditorTextFieldDocumentListener() {
                 map.put(settings::setEntityPackage, entityPackageField);
-                map.put(settings::setDaoPackage, daoPackageField);
                 map.put(settings::setServicePackage, servicePackageField);
                 map.put(settings::setServicePackage, serviceImplPackageField);
                 map.put(settings::setControllerPackage, controllerPackageField);
@@ -233,7 +212,6 @@ public class BaseSetting implements IWindows {
 
         EditorTextFieldDocumentListener editorTextFieldDocumentListener = new EditorTextFieldDocumentListener();
         entityPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
-        daoPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         servicePackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         serviceImplPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
         controllerPackageField.getDocument().addDocumentListener(editorTextFieldDocumentListener);
@@ -263,7 +241,6 @@ public class BaseSetting implements IWindows {
     private void createUIComponents() {
         Project project = PluginUtils.getProject();
         entityPackageField = createEditorTextField(project);
-        daoPackageField = createEditorTextField(project);
         servicePackageField = createEditorTextField(project);
         serviceImplPackageField = createEditorTextField(project);
         controllerPackageField = createEditorTextField(project);
@@ -289,9 +266,6 @@ public class BaseSetting implements IWindows {
     private void configSelectPackage() {
         selectEntityPackageButton.addActionListener(e -> {
             chooserPackage(entityPackageField.getText(), entityPackageField::setText);
-        });
-        selectDaoPackageButton.addActionListener(e -> {
-            chooserPackage(daoPackageField.getText(), daoPackageField::setText);
         });
         selectServicePackageButton.addActionListener(e -> {
             chooserPackage(servicePackageField.getText(), servicePackageField::setText);
@@ -329,17 +303,14 @@ public class BaseSetting implements IWindows {
         emailField.setText(developer.getEmail());
 
         entitySuffixField.setText(settings.getEntitySuffix());
-        daoSuffixField.setText(settings.getDaoSuffix());
         serviceSuffixField.setText(settings.getServiceSuffix());
         serviceImplSuffixField.setText(settings.getServiceImplSuffix());
         controllerSuffixField.setText(settings.getControllerSuffix());
 
         entityPackageField.setText(settings.getEntityPackage());
-        daoPackageField.setText(settings.getDaoPackage());
         servicePackageField.setText(settings.getServicePackage());
         serviceImplPackageField.setText(settings.getServiceImplPackage());
         controllerPackageField.setText(settings.getControllerPackage());
-//        xmlPackageField.setText(settings.getXmlPackage());
 
         overrideJavaCheckBox.setSelected(options.isOverrideJava());
         overrideXmlCheckBox.setSelected(options.isOverrideXml());

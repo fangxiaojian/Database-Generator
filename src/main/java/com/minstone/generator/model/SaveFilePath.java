@@ -53,9 +53,9 @@ public class SaveFilePath {
         Variable.type = null;
     }
 
-    public static SaveFilePath create(RootModel rootModel, Settings settings) {
+    public static SaveFilePath create(Settings settings) {
         SaveFilePath saveFilePath;
-        String entityName = String.valueOf(rootModel.getEntity().getName());
+        String entityName = settings.getEntityName();
         if (Variable.type == null) {
             return new SaveFilePath(entityName + ".java",
                     settings.getSourcesPathAt("temp"));

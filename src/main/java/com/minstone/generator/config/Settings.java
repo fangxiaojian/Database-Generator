@@ -66,6 +66,14 @@ public class Settings {
      * Mapper XML 包名
      */
     private String xmlPackage = "mapper";
+    /**
+     * 文书类名
+     */
+    private String entityName;
+    /**
+     * 文书名
+     */
+    private String entityComment;
 
     public String getSourcesPathAt(String filename) {
         return sourcesPath + "/" + filename;

@@ -1,17 +1,16 @@
 ${gen.setType("controller")}
 package ${entity.packages.controller};
 
+import com.minstone.app.ale.basic.bean.ResponseResultBean;
+import com.minstone.app.ale.datacenter.coreapi.bean.core.CommonCaseDocDto;
+import com.minstone.app.ale.datacenter.coreapi.bean.core.CommonDocFlowDealBean;
 import ${entity.packages.entity.full};
 import ${entity.packages.service.full};
-
-import com.github.pagehelper.util.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Restful: ${entity.comment}
@@ -20,7 +19,7 @@ import java.util.List;
  * @Email ${developer.email}
  * @Date ${date.toString("yyyy-MM-dd HH:mm:ss")}
  */
-@Api(tags = "${table.comment}")
+@Api(tags = "${entity.comment}")
 @RestController
 @RequestMapping("/doc/${entity.name.firstLower}")
 public class ${entity.name.controller}{
@@ -28,34 +27,19 @@ public class ${entity.name.controller}{
     @Autowired
     ${entity.name.service} ${entity.name.service.firstLower};
 
-    @PostMapping(value = "add")
-    @ApiOperation(value = "add ${table.comment}")
-    public ResponseResultBean<${entity.name.entity}> add(
-        @ApiParam(name = "${entity.name.entity.firstLower}", value = "${table.comment}")
-        @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
-        return ResponseResultBean.success(${entity.name.service.firstLower}.add(${entity.name.entity.firstLower}));
+    @GetMapping(value = "getFlowDeal")
+    @ApiOperation(value = "获取 ${entity.comment} 详细信息")
+    public ResponseResultBean<CommonDocFlowDealBean<${entity.name.entity}>> getDocFlowDeal(
+        @ApiParam(name = "flowInid", value = "流程实例id")
+        @RequestParam("flowInid") Long flowInid) {
+        CommonDocFlowDealBean<${entity.name.entity}> docFlowDealBean = ${entity.name.service.firstLower}.getDocFlowDeal(flowInid);
+            return ResponseResultBean.success(docFlowDealBean);
     }
 
-    @PostMapping(value = "update")
-    @ApiOperation(value = "update ${table.comment}")
-    public ResponseResultBean<${entity.name.entity}> update(
-        @ApiParam(name = "${entity.name.entity.firstLower}", value = "${table.comment}")
-        @RequestBody ${entity.name.entity} ${entity.name.entity.firstLower}) {
-        if(StringUtil.isEmpty(${entity.name.entity.firstLower}.getCode())){
-            return ResponseResultBean.serverError("code is not null");
-        }
-        return ResponseResultBean.success(${entity.name.service.firstLower}.update(${entity.name.entity.firstLower}));
-    }
-
-    @GetMapping(value = "detail")
-    @ApiOperation(value = "getDetail ${table.comment}")
-    public ResponseResultBean<${entity.name.entity}> detail(
-        @ApiParam(name = "code", value = "code",required = true)
-        @RequestParam("code") String code) {
-        if(StringUtil.isEmpty(code)){
-            return ResponseResultBean.serverError("code is not null");
-        }
-        return ResponseResultBean.success(${entity.name.service.firstLower}.detail(code));
+    @PostMapping(value = "loadWorkFlow")
+    @ApiOperation(value = "${entity.comment}审批流程（拟稿、保存、发送下一步）")
+    public ResponseResultBean<CommonDocFlowDealBean<${entity.name.entity}>> loadWorkFlow(@RequestBody CommonCaseDocDto<${entity.name.entity}> commonCaseDocDto) {
+         return ResponseResultBean.success(${entity.name.service.firstLower}.loadWorkFlow(commonCaseDocDto));
     }
 
 }

@@ -3,7 +3,6 @@ config/options.json
 config/settings.json
 config/types.json
 templates/all-variable.ftl
-templates/minstone/Mapper.java.ftl
 templates/minstone/Model.java.ftl
 templates/minstone/Restful.java.ftl
 templates/minstone/Service.java.ftl

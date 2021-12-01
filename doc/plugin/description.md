@@ -1,26 +1,10 @@
 [Github](https://github.com/fangxiaojian/Database-Generator) | [Gitee](https://gitee.com/fangxiaojian/Database-Generator)
 
-**English (Google Translate)** / 中文
+**中文** 
 
 <br>
 
-A code generator that relies on the IDEA Database tool to generate the corresponding Java code through the database table structure. The plug-in provides a simple set of add, delete, and modify code templates. You can also add custom templates to generate front-end code or other related code.
-
-<br>
-
-Provide `all-variable.ftl` template file to illustrate all variable usage and corresponding results.
-
-<br>
-
-This plugin supports `beetl`/`freemarker`/`velocity` code templates of three template engines. You can choose which template engine to use for the file suffix (`btl`/`ftl`/`vm`). For custom templates, please Read <a href="https://github.com/fangxiaojian/Database-Generator/blob/master/doc/template-document.md">Template Variable Document</a> to understand the contents of related variables before custom development.
-
-<br><br>
-
-**中文** / English
-
-<br>
-
-一个依赖 IDEA Database 工具的代码生成器，通过数据库表结构生成相应的Java代码，插件提供一套简单的增删查改代码模板，也可以新增自定义模板来生成前端代码或其他相关的代码。
+一个专用于 Minstone 的 IDEA 代码生成器，直接生成相应的Java代码，插件提供一套简单的接口代码模板，也可以新增自定义模板来生成文书Json代码或其他相关的代码。
 
 <br>
 

@@ -15,6 +15,8 @@ settings.servicePackage = ${settings.servicePackage}
 settings.serviceImplPackage = ${settings.serviceImplPackage}
 settings.controllerPackage = ${settings.controllerPackage}
 settings.xmlPackage = ${settings.xmlPackage}
+settings.entityName = ${settings.entityName}
+settings.entityComment = ${settings.entityComment}
 
 developer.author = ${developer.author}
 developer.email = ${developer.email}

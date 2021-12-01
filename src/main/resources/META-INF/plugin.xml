@@ -19,12 +19,16 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action
-                id="com.minstone.generator.action.MainAction"
-                class="com.minstone.generator.action.MainAction"
-                text="Generator Code"
-                description="Generator code">
-            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
-        </action>
+        <!--<action-->
+        <!--        id="com.minstone.generator.action.MainAction"-->
+        <!--        class="com.minstone.generator.action.MainAction"-->
+        <!--        text="Generator Code"-->
+        <!--        description="Generator code">-->
+        <!--    <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>-->
+        <!--</action>-->
+        <group id="MyPlugin.SampleMenu" text="Generator Code" description="Generator Code">
+            <add-to-group group-id="MainMenu" anchor="last"  />
+            <action id="com.minstone.generator.action.MainAction" class="com.minstone.generator.action.MainAction" text="SHGenerator" description="sh project generator easy code" />
+        </group>
     </actions>
 </idea-plugin>

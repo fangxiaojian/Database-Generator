@@ -42,10 +42,6 @@ public class Main extends JFrame {
      */
     private final Options options;
     /**
-     * 面板对象：数据库表配置
-     */
-    private final TableSetting tableSetting;
-    /**
      * 面板对象：基础信息配置
      */
     private final BaseSetting baseSetting;
@@ -65,6 +61,14 @@ public class Main extends JFrame {
      * 输入框：资源代码路径
      */
     private JTextField sourcesPathField;
+    /**
+     * 输入框：文书类名，不包含后缀
+     */
+    private JTextField entityNameField;
+    /**
+     * 输入框：文书名
+     */
+    private JTextField entityCommentField;
 
     /**
      * 输入框：输入内容监听
@@ -97,6 +101,8 @@ public class Main extends JFrame {
                     TextFieldDocumentUtil.updateSettingValue(document, projectPathField.getTextField(), settings::setProjectPath);
                 }
             }
+            TextFieldDocumentUtil.updateSettingValue(document, entityNameField, settings::setEntityName);
+            TextFieldDocumentUtil.updateSettingValue(document, entityCommentField, settings::setEntityComment);
         }
     };
     /**
@@ -120,10 +126,8 @@ public class Main extends JFrame {
         this.options = configService.getOptions();
         baseSetting = new BaseSetting(settings, developer, options);
         selectTemplate = new SelectTemplate();
-        tableSetting = new TableSetting(psiElements);
         tableTabbedPane.addTab("基础配置", baseSetting.getContent());
         tableTabbedPane.addTab("模板选择", selectTemplate.getContent());
-        tableTabbedPane.addTab("数据库表配置", tableSetting.getContent());
         initWindows();
         initConfig();
     }
@@ -166,7 +170,7 @@ public class Main extends JFrame {
                 }
                 setVisible(false);
                 Generator generator = new Generator(settings, options, developer);
-                GeneratorTask generatorTask = new GeneratorTask(project, this, generator, allSelectFile, tableSetting.getRootModels());
+                GeneratorTask generatorTask = new GeneratorTask(project, this, generator, allSelectFile);
                 ProgressManager.getInstance().run(generatorTask);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
@@ -194,6 +198,8 @@ public class Main extends JFrame {
         projectPathField.getTextField().getDocument().addDocumentListener(documentListener);
         javaPathField.getDocument().addDocumentListener(documentListener);
         sourcesPathField.getDocument().addDocumentListener(documentListener);
+        entityNameField.getDocument().addDocumentListener(documentListener);
+        entityCommentField.getDocument().addDocumentListener(documentListener);
 
         String projectPath = settings.getProjectPath();
         if (StringUtils.isBlank(projectPath)) {
@@ -202,5 +208,7 @@ public class Main extends JFrame {
         projectPathField.setText(projectPath);
         javaPathField.setText(settings.getJavaPath());
         sourcesPathField.setText(settings.getSourcesPath());
+        entityNameField.setText(settings.getEntityName());
+        entityCommentField.setText(settings.getEntityComment());
     }
 }

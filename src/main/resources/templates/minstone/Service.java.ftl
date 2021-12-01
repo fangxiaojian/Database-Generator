@@ -1,6 +1,7 @@
 ${gen.setType("service")}
 package ${entity.packages.service};
 
+import com.minstone.app.ale.common.service.WorkflowTemplate;
 import ${entity.packages.entity.full};
 
 /**
@@ -10,26 +11,6 @@ import ${entity.packages.entity.full};
  * @Email ${developer.email}
  * @Date ${date.toString("yyyy-MM-dd HH:mm:ss")}
  */
-public interface ${entity.name.service} {
+public interface ${entity.name.service} extends WorkflowTemplate<${entity.name.entity}> {
 
-    /**
-    * add
-    * @param ${entity.name.entity.firstLower} model
-    * @return result
-    */
-    ${entity.name.entity} add(${entity.name.entity} ${entity.name.entity.firstLower});
-
-    /**
-    * getDetailByCode
-    * @param code
-    * @return result
-    */
-    ${entity.name.entity} detail(String code);
-
-    /**
-    * update
-    * @param ${entity.name.entity.firstLower} model
-    * @return result
-    */
-    ${entity.name.entity} update(${entity.name.entity} ${entity.name.entity.firstLower});
 }

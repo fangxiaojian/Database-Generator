@@ -2,12 +2,12 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.minstone.generator.ui.win.BaseSetting">
   <grid id="27dc6" binding="content" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
     <constraints>
-      <xy x="35" y="20" width="950" height="510"/>
+      <xy x="35" y="20" width="950" height="444"/>
     </constraints>
     <properties>
-      <maximumSize width="950" height="510"/>
-      <minimumSize width="950" height="510"/>
-      <preferredSize width="950" height="510"/>
+      <maximumSize width="950" height="440"/>
+      <minimumSize width="950" height="440"/>
+      <preferredSize width="950" height="440"/>
     </properties>
     <border type="none"/>
     <children>
@@ -49,47 +49,6 @@
             <constraints/>
             <properties>
               <text resource-bundle="i18n/language" key="panel.entity.package.select"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="b10d9" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-        <constraints/>
-        <properties>
-          <preferredSize width="940" height="68"/>
-        </properties>
-        <border type="etched" title-resource-bundle="i18n/language" title-key="panel.dao.title"/>
-        <children>
-          <component id="17304" class="javax.swing.JLabel">
-            <constraints/>
-            <properties>
-              <text resource-bundle="i18n/language" key="panel.dao.suffix"/>
-            </properties>
-          </component>
-          <component id="5b05" class="javax.swing.JTextField" binding="daoSuffixField">
-            <constraints/>
-            <properties>
-              <preferredSize width="100" height="29"/>
-              <text value="mapper"/>
-            </properties>
-          </component>
-          <component id="585ba" class="javax.swing.JLabel">
-            <constraints/>
-            <properties>
-              <text resource-bundle="i18n/language" key="panel.dao.package"/>
-            </properties>
-          </component>
-          <component id="ff1a0" class="com.intellij.ui.EditorTextField" binding="daoPackageField" custom-create="true">
-            <constraints/>
-            <properties>
-              <preferredSize width="400" height="29"/>
-              <text value="com.minstone.app.ale.datacenter.mapper"/>
-            </properties>
-          </component>
-          <component id="c435d" class="javax.swing.JButton" binding="selectDaoPackageButton">
-            <constraints/>
-            <properties>
-              <text resource-bundle="i18n/language" key="panel.dao.package.select"/>
             </properties>
           </component>
         </children>
@@ -247,7 +206,7 @@
           <component id="ad06d" class="javax.swing.JTextField" binding="emailField">
             <constraints/>
             <properties>
-              <preferredSize width="150" height="29"/>
+              <preferredSize width="250" height="29"/>
             </properties>
           </component>
         </children>

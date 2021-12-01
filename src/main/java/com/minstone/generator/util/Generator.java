@@ -47,6 +47,7 @@ public class Generator {
         map.put("developer", developer);
         map.put("gen", Variable.getInstance());
         map.put("date", DateTime.now());
+        map.put("entity", settings.getEntityName());
     }
 
     private File getTemplateWorkspace(File templateFile) {
@@ -83,30 +84,23 @@ public class Generator {
     /**
      * 执行生成代码任务
      */
-    public void generator(RootModel rootModel, List<File> templateFiles, BiConsumer<Integer, String> progress) {
-        if (rootModel == null || templateFiles == null || templateFiles.isEmpty()) {
+    public void generator(List<File> templateFiles) {
+        if (templateFiles == null || templateFiles.isEmpty()) {
             return;
         }
-        map.put("table", rootModel.getTable());
-        map.put("columns", rootModel.getColumns());
-        map.put("entity", rootModel.getEntity(settings));
-        map.put("fields", rootModel.getFields());
-        map.put("primary", rootModel.getPrimary());
         for (int i = 0; i < templateFiles.size(); i++) {
             File templateFile = templateFiles.get(i);
 
             final File templateWorkspace = getTemplateWorkspace(templateFile);
             String templateFilename = FileUtils.relativePath(templateWorkspace, templateFile).replaceFirst(PluginUtils.TEMPLATE_DIR, "");
-            if (progress != null) {
-                progress.accept(i, templateFilename);
-            }
+
             // 重置内容，方便使用默认配置
             Variable.resetVariables();
-            generatorTemplateFile(rootModel, getTemplateUtils(templateWorkspace), templateFile, templateFilename);
+            generatorTemplateFile(getTemplateUtils(templateWorkspace), templateFile, templateFilename);
         }
     }
 
-    private void generatorTemplateFile(RootModel rootModel, TemplateUtils templateUtils, File templateFile, String templateFilename) {
+    private void generatorTemplateFile(TemplateUtils templateUtils, File templateFile, String templateFilename) {
         try {
             String result = templateUtils.generatorFileToString(templateFilename, map);
             if (StringUtils.isBlank(result)) {
@@ -117,7 +111,7 @@ public class Generator {
             if (Variable.type == null) {
                 saveFilePath = new SaveFilePath(templateFile.getName(), settings.getSourcesPathAt("temp"));
             } else {
-                saveFilePath = SaveFilePath.create(rootModel, settings);
+                saveFilePath = SaveFilePath.create(settings);
             }
             File saveFile = new File(settings.getProjectPath(), String.valueOf(saveFilePath));
             PsiFile psiFile = FileUtils.getInstance().saveFileContent(project, saveFile, result, saveFilePath.isOverride(options));
