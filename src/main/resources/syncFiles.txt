@@ -3,8 +3,12 @@ config/options.json
 config/settings.json
 config/types.json
 templates/all-variable.ftl
-templates/minstone/Model.java.ftl
-templates/minstone/Restful.java.ftl
-templates/minstone/Service.java.ftl
-templates/minstone/ServiceImpl.java.ftl
+templates/approvalDocuments/Model.java.ftl
+templates/approvalDocuments/Restful.java.ftl
+templates/approvalDocuments/Service.java.ftl
+templates/approvalDocuments/ServiceImpl.java.ftl
 templates/README.md
+templates/registrationDocuments/Model.java.ftl
+templates/registrationDocuments/Restful.java.ftl
+templates/registrationDocuments/Service.java.ftl
+templates/registrationDocuments/ServiceImpl.java.ftl

@@ -44,6 +44,7 @@ public class ${entity.name.serviceImpl} extends BaseDocService<${entity.name.ent
 
     /**
      * 流程办结，如果存在特殊业务处理的需要重写父类的办结方法
+     * 参考 DocCaseUndertakerChangeServiceImpl
      * @param applyForm
      * @param commonWorkFlowBean
      * @param doc
@@ -56,15 +57,16 @@ public class ${entity.name.serviceImpl} extends BaseDocService<${entity.name.ent
         }
     }
 
-    /***
-    *  非办结的业务方法，如果存在个性化业务需要重写这个方法
-    * @param applyForm
-    * @param commonOaWorkFlow
-    * @param doc
-    */
+    /**
+     *  非办结的业务方法，如果存在个性化业务需要重写这个方法
+     * 参考 DocCaseUndertakerChangeServiceImpl
+     * @param applyForm
+     * @param commonOaWorkFlow
+     * @param doc
+     */
     @Override
     protected void onSend(ApplyForm applyForm, CommonWorkFlowBean commonOaWorkFlow, ${entity.name.entity} doc) {
-        //发起审批后需要修改案件承办机构变更状态为审批中，只需要第一次发起的时候调用，需要在ale-case-service中实现
+        // 发起审批后需要修改案件承办机构变更状态为审批中，只需要第一次发起的时候调用，需要在ale-case-service中实现
     }
 
 }

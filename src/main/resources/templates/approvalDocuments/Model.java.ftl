@@ -32,13 +32,13 @@ ${entity.packages}
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ${entity.name.entity} extends FormBase implements Serializable {
     /* 实体类样式参考
-    //陈述申辩结束时间
+    //时间样式
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "陈述申辩结束时间 yyyy-MM-dd HH:mm:ss")
     private Date defenseTimeEnd;
 
-    //陈述申辩地点
+    //通用样式
     @ApiModelProperty(value = "陈述申辩地点")
     private String defenseAddress;
     */

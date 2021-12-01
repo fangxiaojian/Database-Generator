@@ -3,11 +3,13 @@ package com.minstone.generator.vo.impl;
 import com.minstone.generator.config.Settings;
 import com.minstone.generator.vo.IEntity;
 import com.intellij.database.psi.DbTable;
+import com.minstone.generator.vo.IEntityField;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 实体类信息
@@ -29,6 +31,11 @@ public class EntityImpl implements IEntity {
         this.name = new EntityName(dbTable);
     }
 
+    public EntityImpl(EntityName name, String comment) {
+        this.name = name;
+        this.comment = comment;
+    }
+
     public void setName(String name) {
         this.name = new EntityName(name);
     }
@@ -42,6 +49,12 @@ public class EntityImpl implements IEntity {
     public void initMore(Set<String> fullTypeNames, Settings settings) {
         packages.clear();
         fullTypeNames.forEach(packages::add);
+        name.initMore(settings);
+        packages.initMore(settings, name);
+    }
+
+    public void initMore(Settings settings) {
+        packages.clear();
         name.initMore(settings);
         packages.initMore(settings, name);
     }

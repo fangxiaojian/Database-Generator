@@ -5,7 +5,10 @@ import com.minstone.generator.config.Options;
 import com.minstone.generator.config.Settings;
 import com.minstone.generator.model.SaveFilePath;
 import com.minstone.generator.template.TemplateUtils;
+import com.minstone.generator.vo.IEntity;
 import com.minstone.generator.vo.Variable;
+import com.minstone.generator.vo.impl.EntityImpl;
+import com.minstone.generator.vo.impl.EntityName;
 import com.minstone.generator.vo.impl.RootModel;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiFile;
@@ -47,7 +50,9 @@ public class Generator {
         map.put("developer", developer);
         map.put("gen", Variable.getInstance());
         map.put("date", DateTime.now());
-        map.put("entity", settings.getEntityName());
+        EntityImpl entity = new EntityImpl(new EntityName(settings.getEntityName()), settings.getEntityComment());
+        entity.initMore(settings);
+        map.put("entity", entity);
     }
 
     private File getTemplateWorkspace(File templateFile) {
